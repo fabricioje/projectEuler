@@ -14,26 +14,15 @@
  *Find the product abc.   
  */
 
+$s = 1000;
 $resultado = 0;
- for ($a = 1; $a < 1000; $a++) { 
-     for ($b = $a + 1; $b <= 1000; $b++) { 
-         #for ($c = $b + 1; $c <= 1000; $c++) { 
-             
-        $c = pow($a, 2) + pow($b, 2);
-        $soma = pow($a, 2) + pow($b, 2) + pow($c, 2);
+ for ($a = 1; $a < $s / 3; $a++) { 
+     for ($b = $a; $b < $s / 2; $b++) { 
+        $c = $s - $a - $b;
 
-        if ($c < 1000) {
-            var_dump($a);
-            var_dump($b);
-            var_dump($c);
-            var_dump('################################################################');
+        if (pow($a, 2) + pow($b, 2) == pow($c, 2)) {
+            $resultado = $a * $b * $c;
         }
-        
-
-        if ($soma == 1000) {
-            $resultado = $soma;
-        }
-         #}
      }
  }
 
